@@ -36,3 +36,15 @@ export function faceCheck(data) { // 人脸验证
     data: data
   })
 }
+
+
+// 重发uk uk/reSendUK
+
+
+export function setReSendUK(data) { // 重发uk
+  return request({
+    url: 'uk/reSendUK',
+    method: 'post',
+    data: data
+  })
+}

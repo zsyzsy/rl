@@ -19,7 +19,7 @@
 
 <script>
 import { NavBar, Button } from 'vant'
-import { uploadFaceFile, faceCheck, faceActionSequence } from '@/api/ukface'
+import { uploadFaceFile, faceCheck, faceActionSequence,setReSendUK } from '@/api/ukface'
 import { contractSign } from '@/api/disburse'
 
 export default {
@@ -89,7 +89,7 @@ export default {
         uploadFaceFile(this.faceType, formData).then(res => {
           if (res.code === '00') {
             this.fileId = res.context.faceFileId
-            faceCheck(this.faceType, {
+            faceCheck({
               'sequence': this.sequence,
               'faceFileId': this.fileId,
               'tokenId': this.tokenId,
@@ -97,18 +97,18 @@ export default {
             }).then(res => {
               if (res.code === '00') {
                 if (res.context.checkResult) {
-                  if (this.faceType && this.faceType === '2') {
-                    contractSign({
-                      'faceFileId': this.fileId,
+                  // if (this.faceType && this.faceType === '2') {
+                    setReSendUK({
+                      // 'faceFileId': this.fileId,
                       'tokenId': this.tokenId
                     }).then(res => {
                       if (res.code === '00') {
                         this.$router.push('faceSuccess')
                       }
                     })
-                  } else {
-                    this.$router.push('faceSuccess')
-                  }
+                  // } else {
+                  //   this.$router.push('faceSuccess')
+                  // }
                 } else {
                   this.$router.push('faceFail')
                 }
