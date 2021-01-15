@@ -38,7 +38,7 @@ export function faceCheck(data) { // 人脸验证
 }
 
 
-// 重发uk uk/reSendUK
+// 重发uk uk/reSendUK  
 
 
 export function setReSendUK(data) { // 重发uk

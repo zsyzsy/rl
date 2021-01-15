@@ -5,7 +5,7 @@
       <video v-if="videoUrl" ref="video" class="video" :src="videoUrl" />
       <img v-else class="img" :src="require('@/assets/face.png')">
     </div>
-    <div class="faceRecgnition-content">
+    <div class="faceRecgnition-content"> 
       <p class="title">录制时，请按顺序完成以下动作</p>
       <div class="content"> {{ sequence.split(',')[0] === '1'?'张嘴':'眨眼' }}<img :src="require('@/assets/arrow.png')" alt=">>>">{{ sequence.split(',')[1] === '1'?'张嘴':'眨眼' }}</div>
       <p class="label">请正对屏幕，确保光线充足，<span>并录制3-5秒</span></p>
