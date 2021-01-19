@@ -7,16 +7,7 @@ export function faceActionSequence(data) { // 人脸顺序
     data: data
   })
 }
-
-// export function uploadFaceFile(data) { // 人脸上传
-//   return request({
-//     url: 'legalAuth/uploadFaceFile',
-//     method: 'post',
-//     data: data
-//   })
-// }
-
-export function uploadFaceFile(res, data) { // 人脸文件上传
+export function uploadFaceFile(type, data) { // 人脸文件上传
   const url = 'legalAuth/uploadFaceFile'
   // if (type === '3') url = 'shareholder/uploadFaceFile'
   return request({
@@ -28,6 +19,13 @@ export function uploadFaceFile(res, data) { // 人脸文件上传
     data: data
   })
 }
+// export function uploadFaceFile(data) { // 人脸上传
+//   return request({
+//     url: 'legalAuth/uploadFaceFile',
+//     method: 'post',
+//     data: data
+//   })
+// }
 
 export function faceCheck(data) { // 人脸验证
   return request({
@@ -37,9 +35,7 @@ export function faceCheck(data) { // 人脸验证
   })
 }
 
-
-// 重发uk uk/reSendUK  
-
+// 重发uk uk/reSendUK
 
 export function setReSendUK(data) { // 重发uk
   return request({
